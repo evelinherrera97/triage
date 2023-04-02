@@ -1,0 +1,9 @@
+.card {
+    border-color: #4044ee ;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.card :hover {
+   box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99,102,241,.9) !important;
+}
