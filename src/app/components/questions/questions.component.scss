@@ -1,9 +1,31 @@
+.content {
+    width: 800px;
+    height: 70vh;
+    display: flex;
+    background: white;
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99, 102, 241, 0.9) !important;
+    border-radius: 20px;
+    color: #686868;
+    .icon {
+        width: 100px;
+    }
+}
 .card {
-    border-color: #4044ee ;
+    width: 100%;
+    height: 80px;
+    border-color: #4044ee;
     cursor: pointer;
-    margin: 10px;
+    margin-bottom: 15px;
+    .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .card :hover {
-   box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99,102,241,.9) !important;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99, 102, 241, 0.9) !important;
+    background: rgb(99, 102, 241);
+    color: white;
 }

@@ -1,128 +1,174 @@
-<div class="container">
-    <div class="question1 d-flex justify-content-between align-items-center">
-        <div>
-            <h4>¿Cuál es la naturaleza de su emergencia?</h4>
+<div class="content py-5" [ngSwitch]="symptom">
+    <div class="col-12 px-5" *ngSwitchCase="''">
+        <div class="intro d-flex justify-content-between align-items-center flex-column">
+            <img class="icon mb-5" src="../../../assets/icons/centro-de-llamadas.png" alt="" srcset="">
+            <h5 class="mb-5">¿Cuál es la naturaleza de su emergencia?</h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate odio excepturi quaerat consequatur
+                eum eius, odit nemo ea quibusdam reiciendis fugiat iste sit, quis placeat. Temporibus, magni! Aliquam,
+                magnam maiores.</p>
+            <button class="btn btn-outline-secondary" (click)="counter('sinto')">Iniciar triaje</button>
         </div>
-        <div>
-            <div class="card card-hover">
+
+    </div>
+    <div *ngSwitchCase="'sinto'" class="question d-flex justify-content-between align-items-center">
+        <div class="text-center col-6 px-5">
+            <img class="icon" src="../../../assets/icons/doctor.png" alt="" srcset="">
+            <h5>¿Cuál es la naturaleza de su emergencia?</h5>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('head')" class="card">
                 <div class="card-body">
                     Dolor de cabeza severo
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('chest')" class="card">
                 <div class="card-body">
                     Dolor torácico / Opresión en el pecho
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('breathing')" class="card">
                 <div class="card-body">
                     Dificultad para respirar
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('bleeding')" class="card">
                 <div class="card-body">
                     Sangrado persistente
                 </div>
             </div>
-            <div class="card">
+        </div>
+    </div>
+    <div *ngSwitchCase="'head'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>Como es el dolor</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus explicabo incidunt voluptate quod
+                sunt dolor perspiciatis distinctio ab magni, iusto nemo, aliquid tempore neque et hic dicta voluptatem
+                optio quos.</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration')" class="card">
                 <div class="card-body">
-                    Otro (especifique)
+                    Migraña
+                </div>
+            </div>
+            <div (click)="counter('duration')" class="card">
+                <div class="card-body">
+                    Cefalea tensional
+                </div>
+            </div>
+            <div (click)="counter('duration')" class="card">
+                <div class="card-body">
+                    Cefalea en racismos
+                </div>
+            </div>
+            <div (click)="counter('duration')" class="card">
+                <div class="card-body">
+                    Cefalea medicamentosa
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div class="question2 d-flex justify-content-between align-items-center">
-        <div>
-            <h4>¿Cuál es la duración de los síntomas?</h4>
+    <div *ngSwitchCase="'duration'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Cuál es la duración de los síntomas?</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos optio deserunt nihil aperiam
+                distinctio fuga illum vero, quia adipisci ea sit iusto officia vel, provident soluta? Officia soluta
+                quod ipsum.</p>
         </div>
-        <div>
-            <div class="card">
+        <div class="col-6 pe-5">
+            <div (click)="counter('others')" class="card">
                 <div class="card-body">
                     Menos de 1 hora
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('others')" class="card">
                 <div class="card-body">
                     De 1 a 3 horas
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('others')" class="card">
                 <div class="card-body">
                     Más de 3 horas
                 </div>
             </div>
         </div>
     </div>
-    <div class="question3 d-flex justify-content-between align-items-center">
-        <div>
-            <h4>¿Hay otros síntomas presentes?</h4>
+    <div *ngSwitchCase="'others'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Hay otros síntomas presentes?</h5>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, sapiente unde! Quam odit impedit nisi
+                nam, commodi dolor, aliquam deleniti facere dolorem obcaecati doloribus repellendus eligendi qui
+                mollitia sunt asperiores.</p>
         </div>
-        <div>
-            <div class="card">
+        <div class="col-6 pe-5">
+            <div (click)="counter('record')" class="card">
                 <div class="card-body">
                     Náuseas y vómitos
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('record')" class="card">
                 <div class="card-body">
                     Mareo o desmayo
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('record')" class="card">
                 <div class="card-body">
                     Fiebre alta
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('record')" class="card">
                 <div class="card-body">
                     Sudores fríos
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('record')" class="card">
                 <div class="card-body">
                     Ningún otro síntoma
                 </div>
             </div>
         </div>
     </div>
-    <div class="question4 d-flex justify-content-between align-items-center">
-        <div>
-            <h4>¿Hay antecedentes médicos relevantes?</h4>
+    <div *ngSwitchCase="'record'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <img class="icon" src="../../../assets/icons/medicamento.png" alt="" srcset="">
+            <h5>¿Hay antecedentes médicos relevantes?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nemo eum cupiditate inventore reprehenderit soluta distinctio laudantium rem perspiciatis earum pariatur fuga, placeat atque consectetur doloremque impedit eius, commodi cumque.</p>
         </div>
-        <div>
-            <div class="card">
+        <div class="col-6 pe-5">
+            <div (click)="counter('contagious')" class="card">
                 <div class="card-body">
                     Enfermedades del corazón o problemas cardiovasculares
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('contagious')" class="card">
                 <div class="card-body">
                     Trastornos respiratorios
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('contagious')" class="card">
                 <div class="card-body">
                     Alergias
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('contagious')" class="card">
                 <div class="card-body">
                     Diabetes
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('contagious')" class="card">
                 <div class="card-body">
                     Ninguno
                 </div>
             </div>
         </div>
     </div>
-    <div class="question5 d-flex justify-content-between align-items-center">
-        <div>
-            <h4>¿Ha estado expuesto recientemente a alguna enfermedad contagiosa?</h4>
+    <div *ngSwitchCase="'contagious'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Ha estado expuesto recientemente a alguna enfermedad contagiosa?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime ea repellat nostrum amet ipsum nesciunt dolore aliquid praesentium, quam voluptatem. Itaque, voluptas. Quis excepturi in non accusamus. Dignissimos, laborum.</p>
         </div>
-        <div>
-            <div class="card">
+        <div class="col-6 pe-5">
+            <div (click)="counter('contagious-yes')" class="card">
                 <div class="card-body">
                     Si
                 </div>
@@ -133,5 +179,33 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+    <div *ngSwitchCase="'contagious-yes'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿A cual enfermedad contagiosa estuviste expuesto?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime ea repellat nostrum amet ipsum nesciunt dolore aliquid praesentium, quam voluptatem. Itaque, voluptas. Quis excepturi in non accusamus. Dignissimos, laborum.</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div class="card">
+                <div class="card-body">
+                    Covid 19
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    Gripa
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    cositas 1
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    cositas 2
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

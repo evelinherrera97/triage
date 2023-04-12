@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.component.scss']
 })
 export class QuestionsComponent implements OnInit {
+  public addition = 0;
+  public symptom = '';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  counter(data: string) {
+    this.symptom = data
+
+    console.log(data);
+
+
+
+
   }
 
 }
