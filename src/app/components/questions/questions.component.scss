@@ -1,6 +1,6 @@
 .content {
-    width: 800px;
-    height: 70vh;
+    width: 900px;
+    height: auto;
     display: flex;
     background: white;
     box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99, 102, 241, 0.9) !important;
@@ -29,3 +29,23 @@
     background: rgb(99, 102, 241);
     color: white;
 }
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+}
+.i {
+    color: red;
+}
+.ii {
+    color: #ff6600;
+}
+.iii {
+    color: #ffae00;
+}
+.iv {
+    color: #ffee00;
+}
+

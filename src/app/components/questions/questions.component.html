@@ -2,11 +2,12 @@
     <div class="col-12 px-5" *ngSwitchCase="''">
         <div class="intro d-flex justify-content-between align-items-center flex-column">
             <img class="icon mb-5" src="../../../assets/icons/centro-de-llamadas.png" alt="" srcset="">
-            <h5 class="mb-5">¿Cuál es la naturaleza de su emergencia?</h5>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate odio excepturi quaerat consequatur
-                eum eius, odit nemo ea quibusdam reiciendis fugiat iste sit, quis placeat. Temporibus, magni! Aliquam,
-                magnam maiores.</p>
-            <button class="btn btn-outline-secondary" (click)="counter('sinto')">Iniciar triaje</button>
+            <h5 class="mb-5">Bienvenido a tu triaje en linea</h5>
+            <p>Una emergencia médica es cualquier situación imprevista que requiere atención médica inmediata para
+                prevenir una lesión grave o salvar vidas. Ejemplos de emergencias médicas incluyen ataques cardíacos,
+                accidentes cerebrovasculares, lesiones traumáticas graves, reacciones alérgicas graves, pérdida de
+                conocimiento, problemas respiratorios, sangrado profuso y crisis convulsivas.</p>
+            <button class="btn btn-outline-secondary" (click)="counter('sinto', 0)">Iniciar triaje</button>
         </div>
 
     </div>
@@ -16,22 +17,22 @@
             <h5>¿Cuál es la naturaleza de su emergencia?</h5>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('head')" class="card">
+            <div (click)="counter('head', 3)" class="card">
                 <div class="card-body">
                     Dolor de cabeza severo
                 </div>
             </div>
-            <div (click)="counter('chest')" class="card">
+            <div (click)="counter('chest', 3)" class="card">
                 <div class="card-body">
                     Dolor torácico / Opresión en el pecho
                 </div>
             </div>
-            <div (click)="counter('breathing')" class="card">
+            <div (click)="counter('breathing', 3)" class="card">
                 <div class="card-body">
                     Dificultad para respirar
                 </div>
             </div>
-            <div (click)="counter('bleeding')" class="card">
+            <div (click)="counter('bleeding', 2)" class="card">
                 <div class="card-body">
                     Sangrado persistente
                 </div>
@@ -41,29 +42,65 @@
     <div *ngSwitchCase="'head'" class="question d-flex justify-content-between align-items-center">
         <div class="col-6 px-5">
             <h5>Como es el dolor</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus explicabo incidunt voluptate quod
-                sunt dolor perspiciatis distinctio ab magni, iusto nemo, aliquid tempore neque et hic dicta voluptatem
-                optio quos.</p>
+            <p><b>Cefaleas tensionales:</b> son las más comunes y suelen ser causadas por la tensión y estrés emocional,
+                tensión muscular y fatiga ocular.</p>
+            <p><b>Migrañas: </b>estas se caracterizan por un dolor de cabeza pulsátil y moderado a intenso que suele
+                afectar solo un lado de la cabeza y, a menudo, viene acompañado de náuseas y sensibilidad a la luz y al
+                sonido.</p>
+            <p><b>Cefaleas en racimo: </b>son menos comunes pero muy intensas y se presentan en ciclos agudos, por lo
+                general durante varias semanas a meses seguidos.</p>
+            <p><b>Dolores de cabeza sinusales: </b>estos dolores se deben a la inflamación de los senos nasales y se
+                sienten como una presión severa en la cara y la frente.</p>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('duration')" class="card">
+            <div (click)="counter('duration', 3)" class="card">
                 <div class="card-body">
                     Migraña
                 </div>
             </div>
-            <div (click)="counter('duration')" class="card">
+            <div (click)="counter('duration', 1)" class="card">
                 <div class="card-body">
                     Cefalea tensional
                 </div>
             </div>
-            <div (click)="counter('duration')" class="card">
+            <div (click)="counter('duration' ,2)" class="card">
                 <div class="card-body">
                     Cefalea en racismos
                 </div>
             </div>
-            <div (click)="counter('duration')" class="card">
+            <div (click)="counter('duration', 1)" class="card">
                 <div class="card-body">
-                    Cefalea medicamentosa
+                    Dolores de cabeza sinusales
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'chest'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>Como es el dolor</h5>
+            <p>Es importante recordar que los síntomas del dolor de tórax pueden variar según la causa subyacente, por
+                lo que siempre es recomendable buscar atención médica inmediata en caso de que se experimente un dolor
+                de pecho repentino o intenso.</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration', 3)" class="card">
+                <div class="card-body">
+                    Dolor de origen cardiovascular
+                </div>
+            </div>
+            <div (click)="counter('duration', 2)" class="card">
+                <div class="card-body">
+                    Dolor de origen pulmonar
+                </div>
+            </div>
+            <div (click)="counter('duration', 2)" class="card">
+                <div class="card-body">
+                    Dolor de origen gastrointestinal
+                </div>
+            </div>
+            <div (click)="counter('duration', 1)" class="card">
+                <div class="card-body">
+                    Dolor de origen muscular
                 </div>
             </div>
         </div>
@@ -71,22 +108,24 @@
     <div *ngSwitchCase="'duration'" class="question d-flex justify-content-between align-items-center">
         <div class="col-6 px-5">
             <h5>¿Cuál es la duración de los síntomas?</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos optio deserunt nihil aperiam
-                distinctio fuga illum vero, quia adipisci ea sit iusto officia vel, provident soluta? Officia soluta
-                quod ipsum.</p>
+            <p>La duración de los síntomas también puede ser un factor importante en la elección de un tratamiento
+                adecuado. Por ejemplo, si una enfermedad ha estado presente durante un corto periodo de tiempo, un
+                médico puede optar por un enfoque más conservador del tratamiento, mientras que si la afección ha estado
+                presente por un largo período de tiempo, puede ser necesario un tratamiento intensivo y más agresivo.
+            </p>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('others')" class="card">
+            <div (click)="counter('others', 1)" class="card">
                 <div class="card-body">
                     Menos de 1 hora
                 </div>
             </div>
-            <div (click)="counter('others')" class="card">
+            <div (click)="counter('others', 2)" class="card">
                 <div class="card-body">
                     De 1 a 3 horas
                 </div>
             </div>
-            <div (click)="counter('others')" class="card">
+            <div (click)="counter('others', 3)" class="card">
                 <div class="card-body">
                     Más de 3 horas
                 </div>
@@ -101,27 +140,27 @@
                 mollitia sunt asperiores.</p>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('record')" class="card">
+            <div (click)="counter('record',2)" class="card">
                 <div class="card-body">
                     Náuseas y vómitos
                 </div>
             </div>
-            <div (click)="counter('record')" class="card">
+            <div (click)="counter('record',3)" class="card">
                 <div class="card-body">
                     Mareo o desmayo
                 </div>
             </div>
-            <div (click)="counter('record')" class="card">
+            <div (click)="counter('record',2)" class="card">
                 <div class="card-body">
                     Fiebre alta
                 </div>
             </div>
-            <div (click)="counter('record')" class="card">
+            <div (click)="counter('record', 1)" class="card">
                 <div class="card-body">
                     Sudores fríos
                 </div>
             </div>
-            <div (click)="counter('record')" class="card">
+            <div (click)="counter('record', 0)" class="card">
                 <div class="card-body">
                     Ningún otro síntoma
                 </div>
@@ -132,30 +171,32 @@
         <div class="col-6 px-5">
             <img class="icon" src="../../../assets/icons/medicamento.png" alt="" srcset="">
             <h5>¿Hay antecedentes médicos relevantes?</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nemo eum cupiditate inventore reprehenderit soluta distinctio laudantium rem perspiciatis earum pariatur fuga, placeat atque consectetur doloremque impedit eius, commodi cumque.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum nemo eum cupiditate inventore
+                reprehenderit soluta distinctio laudantium rem perspiciatis earum pariatur fuga, placeat atque
+                consectetur doloremque impedit eius, commodi cumque.</p>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('contagious')" class="card">
+            <div (click)="counter('contagious', 3)" class="card">
                 <div class="card-body">
                     Enfermedades del corazón o problemas cardiovasculares
                 </div>
             </div>
-            <div (click)="counter('contagious')" class="card">
+            <div (click)="counter('contagious', 2)" class="card">
                 <div class="card-body">
                     Trastornos respiratorios
                 </div>
             </div>
-            <div (click)="counter('contagious')" class="card">
+            <div (click)="counter('contagious', 1)" class="card">
                 <div class="card-body">
                     Alergias
                 </div>
             </div>
-            <div (click)="counter('contagious')" class="card">
+            <div (click)="counter('contagious', 3)" class="card">
                 <div class="card-body">
                     Diabetes
                 </div>
             </div>
-            <div (click)="counter('contagious')" class="card">
+            <div (click)="counter('contagious', 0)" class="card">
                 <div class="card-body">
                     Ninguno
                 </div>
@@ -165,17 +206,61 @@
     <div *ngSwitchCase="'contagious'" class="question d-flex justify-content-between align-items-center">
         <div class="col-6 px-5">
             <h5>¿Ha estado expuesto recientemente a alguna enfermedad contagiosa?</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime ea repellat nostrum amet ipsum nesciunt dolore aliquid praesentium, quam voluptatem. Itaque, voluptas. Quis excepturi in non accusamus. Dignissimos, laborum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime ea repellat nostrum amet ipsum
+                nesciunt dolore aliquid praesentium, quam voluptatem. Itaque, voluptas. Quis excepturi in non accusamus.
+                Dignissimos, laborum.</p>
         </div>
         <div class="col-6 pe-5">
-            <div (click)="counter('contagious-yes')" class="card">
+            <div (click)="counter('contagious-yes', 3)" class="card">
                 <div class="card-body">
                     Si
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('total', 0)" class="card">
                 <div class="card-body">
                     No
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'breathing'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>Cual es la naturaleza de la dificultad respiratoria</h5>
+            <p><b>Disnea:</b> Esta es una sensación de falta de aliento o dificultad para respirar. Una persona puede
+                tener disnea durante el ejercicio físico, mientras camina o incluso en reposo.</p>
+            <p><b>Sibilancias:</b> Un sonido agudo y silbante que se produce cuando una persona exhala o inhala aire
+                debido a una obstrucción de las vías respiratorias.</p>
+            <p><b>Tos:</b> Una respuesta defensiva del cuerpo para expulsar irritantes o secreciones acumuladas en los
+                pulmones y las vías respiratorias.</p>
+            <p><b>Opresión en</b> el pecho: Una sensación de presión o constricción en el pecho, que puede ser un signo
+                de una obstrucción de las vías respiratorias o inflamación.</p>
+            <p><b>Fatiga:</b> Una sensación de cansancio y debilidad en el cuerpo debido a la dificultad para respirar.
+            </p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    Disnea
+                </div>
+            </div>
+            <div (click)="counter('duration',2)" class="card">
+                <div class="card-body">
+                    Sibilancias
+                </div>
+            </div>
+            <div (click)="counter('tos',2)" class="card">
+                <div class="card-body">
+                    Tos
+                </div>
+            </div>
+            <div (click)="counter('duration',3)" class="card">
+                <div class="card-body">
+                    Opresión
+                </div>
+            </div>
+            <div (click)="counter('duration',1)" class="card">
+                <div class="card-body">
+                    Fatiga
                 </div>
             </div>
         </div>
@@ -183,29 +268,178 @@
     <div *ngSwitchCase="'contagious-yes'" class="question d-flex justify-content-between align-items-center">
         <div class="col-6 px-5">
             <h5>¿A cual enfermedad contagiosa estuviste expuesto?</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint maxime ea repellat nostrum amet ipsum nesciunt dolore aliquid praesentium, quam voluptatem. Itaque, voluptas. Quis excepturi in non accusamus. Dignissimos, laborum.</p>
+            <p>Algunas de las enfermedades más comunes a las que pueden estar expuestos los médicos de urgencias
+                incluyen:</p>
         </div>
         <div class="col-6 pe-5">
-            <div class="card">
+            <div (click)="counter('total',3)" class="card">
+                <div class="card-body">
+                    Hepatitis B y C
+                </div>
+            </div>
+            <div (click)="counter('total',1)" class="card">
+                <div class="card-body">
+                    Gripa (Influenza)
+                </div>
+            </div>
+            <div (click)="counter('total',2)" class="card">
+                <div class="card-body">
+                    Enfermedades de transmisión sexual (ETS)
+                </div>
+            </div>
+            <div (click)="counter('total',2)" class="card">
                 <div class="card-body">
                     Covid 19
                 </div>
             </div>
-            <div class="card">
+            <div (click)="counter('total',0)" class="card">
                 <div class="card-body">
-                    Gripa
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    cositas 1
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    cositas 2
+                    Ninguna
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngSwitchCase="'tos'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Que tipo de tos presenta?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis veniam mollitia accusamus
+                maxime, sequi omnis, rem impedit iusto quasi, error sunt quia vel itaque harum deleniti. Dolores,
+                molestiae doloremque?</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('pollutant',2)" class="card">
+                <div class="card-body">
+                    Seca
+                </div>
+            </div>
+            <div (click)="counter('pollutant',1)" class="card">
+                <div class="card-body">
+                    Con flema
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'pollutant'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Ha viajado recientemente a algún lugar donde haya una alta incidencia de enfermedades respiratorias?
+            </h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis veniam mollitia accusamus
+                maxime, sequi omnis, rem impedit iusto quasi, error sunt quia vel itaque harum deleniti. Dolores,
+                molestiae doloremque?</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration',2)" class="card">
+                <div class="card-body">
+                    Si
+                </div>
+            </div>
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    No
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'bleeding'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿El sangrado es de algún lugar específico?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis veniam mollitia accusamus
+                maxime, sequi omnis, rem impedit iusto quasi, error sunt quia vel itaque harum deleniti. Dolores,
+                molestiae doloremque?</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration',2)" class="card">
+                <div class="card-body">
+                    Nariz
+                </div>
+            </div>
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    Boca
+                </div>
+            </div>
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    Oido
+                </div>
+            </div>
+            <div (click)="counter('gynecological', 3)" class="card">
+                <div class="card-body">
+                    Recto
+                </div>
+            </div>
+            <div (click)="counter('gynecological', 3)" class="card">
+                <div class="card-body">
+                    Vagina
+                </div>
+            </div>
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    Otro
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'gynecological'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-6 px-5">
+            <h5>¿Hay antecedentes de problemas ginecológicos o enfermedades del tracto gastrointestinal?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis veniam mollitia accusamus
+                maxime, sequi omnis, rem impedit iusto quasi, error sunt quia vel itaque harum deleniti. Dolores,
+                molestiae doloremque?</p>
+        </div>
+        <div class="col-6 pe-5">
+            <div (click)="counter('duration',2)" class="card">
+                <div class="card-body">
+                    Si
+                </div>
+            </div>
+            <div (click)="counter('duration', 0)" class="card">
+                <div class="card-body">
+                    No
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div *ngSwitchCase="'total'" class="question d-flex justify-content-between align-items-center">
+        <div class="col-12 px-5">
+            <div class="row justify-content-center mb-4">
+                <img class="icon" src="../../../assets/icons/centro-de-llamadas.png" alt="" srcset="">
+            </div>
+            <h5 class="text-center">Completaste el triaje</h5>
+            <div>
+                <h4 class="text-center" [ngClass]="level">te encuentras en el nivel {{level | uppercase}}</h4>
+            </div>
+            <div *ngIf="level == 'i'">
+                <p class="text-center">Requiere atención inmediata. La condición clínica del paciente representa un
+                    riesgo vital y
+                    necesita maniobras de reanimación por su compromiso ventilatorio, respiratorio, hemodinámico o
+                    neurológico, perdida de miembro u órgano u otras condiciones que por norma exijan <b>atención
+                        inmediata.</b></p>
+            </div>
+            <div *ngIf="level == 'ii'">
+                <p class="text-center">La condición clínica del paciente puede evolucionar hacia un rá-pido deterioro o
+                    a su muerte, o
+                    incrementar el riesgo para la pérdida de un miembro u órgano, por lo tanto, requiere una
+                    atención que no debe superar <b>los treinta (30) minutos.</b></p>
+            </div>
+            <div *ngIf="level == 'iii'">
+                <p class="text-center"> La condición clínica del paciente requiere de medidas diagnósticas y
+                    terapéuticas en urgencias.
+                    Son aquellos pacientes que necesitan un examen complementario o un tratamiento rápido, dado que
+                    se encuentran estables desde el punto de vista fisiológico aunque su situación puede empeorar si
+                    no se actúa.
+                </p>
+            </div>
+            <div *ngIf="level == 'iv'">
+                <p class="text-center"> El paciente presenta condiciones médicas que no comprometen su estado general,
+                    ni representan un
+                    riesgo evidente para la vida o pérdida de miembro u órgano. No obstante, existen riesgos de
+                    complicación o secuelas de la enfermedad o lesión si no recibe la atención correspondiente.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 </div>
